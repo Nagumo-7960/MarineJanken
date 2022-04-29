@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            setBackgroundImage()
+            ShowHome()
         }
     }
 
@@ -34,15 +34,17 @@ class MainActivity : ComponentActivity() {
     )
 
     @Composable
-    fun showHome(){
-        Row {
-            showTitle()
+    fun ShowHome() {
+        Box {
+            SetBackgroundImage()
+            ShowTitle()
+            StartButton()
         }
 
     }
 
     @Composable
-    fun setBackgroundImage() {
+    fun SetBackgroundImage() {
         Image(
             painter = painterResource(id = R.drawable.marine_home),
             contentDescription = "Background",
@@ -52,11 +54,11 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun showTitle(){
+    fun ShowTitle() {
         Text(
             text = "うみべのじゃんけん",
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(
                     top = 120.dp
                 ),
@@ -67,11 +69,19 @@ class MainActivity : ComponentActivity() {
         )
     }
 
+    @Composable
+    fun StartButton() {
+        Button(onClick = { /*TODO*/ }) {
+            Text(
+                text = "スタート"
+            )
+        }
+    }
+
     @Preview
     @Composable
     fun ComposablePreview() {
-        setBackgroundImage()
-        showHome()
+        ShowHome()
     }
 
 }
