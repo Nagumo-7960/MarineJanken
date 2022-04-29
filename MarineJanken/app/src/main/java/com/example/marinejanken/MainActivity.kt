@@ -57,7 +57,10 @@ class MainActivity : ComponentActivity() {
             text = "うみべのじゃんけん",
             modifier = Modifier
                 .fillMaxSize()
-                .padding(8.dp),
+                .padding(
+                    top = 120.dp
+                ),
+
             Color.White,
             fontSize = 33.sp,
             textAlign = TextAlign.Center
