@@ -9,6 +9,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -35,10 +36,14 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun ShowHome() {
-        Box {
+        Box (){
             SetBackgroundImage()
-            ShowTitle()
-            StartButton()
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                ShowTitle()
+                StartButton()
+            }
         }
 
     }
@@ -71,7 +76,13 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun StartButton() {
-        Button(onClick = { /*TODO*/ }) {
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .padding(
+                    top = 200.dp
+                )
+        ) {
             Text(
                 text = "スタート"
             )
