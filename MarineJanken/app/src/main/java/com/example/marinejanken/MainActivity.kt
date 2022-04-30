@@ -3,41 +3,107 @@ package com.example.marinejanken
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme.colors
+import androidx.compose.material.MaterialTheme.shapes
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.marinejanken.ui.theme.MarineJankenTheme
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MarineJankenTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+            ShowHome()
         }
     }
-}
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+    data class Message(val author: String, val body: String)
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MarineJankenTheme {
-        Greeting("Android")
+
+    @Preview(
+        showBackground = true
+    )
+
+    @Composable
+    fun ShowHome() {
+        Box (){
+            SetBackgroundImage()
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                ShowTitle()
+                StartButton()
+            }
+        }
+
     }
+
+    @Composable
+    fun SetBackgroundImage() {
+        Image(
+            painter = painterResource(id = R.drawable.marine_home),
+            contentDescription = "Background",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier.fillMaxSize()
+        )
+    }
+
+    @Composable
+    fun ShowTitle() {
+        Text(
+            text = "うみべのじゃんけん",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    top = 120.dp
+                ),
+
+            Color.White,
+            fontSize = 33.sp,
+            textAlign = TextAlign.Center
+        )
+    }
+
+    @Composable
+    fun StartButton() {
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .padding(
+                    top = 300.dp
+                )
+                .height(50.dp)
+                .width(120.dp),
+            shape = RoundedCornerShape(30),
+            colors = ButtonDefaults.textButtonColors(
+                backgroundColor = Color.White,
+                contentColor = Color.Black
+            )
+        ) {
+            Text(
+                text = "スタート",
+                fontWeight = FontWeight.Bold
+            )
+        }
+    }
+
+    @Preview
+    @Composable
+    fun ComposablePreview() {
+        ShowHome()
+    }
+
 }
