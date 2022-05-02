@@ -45,14 +45,15 @@ fun BackHomeButton(navController: NavController) {
         onClick = { navController.navigate("homeScreen") },
         modifier = Modifier
             .padding(
-                top = 300.dp
+                top = 20.dp,
+                start = 10.dp
             )
-            .height(50.dp)
-            .width(120.dp),
+            .height(35.dp)
+            .width(84.dp),
         shape = RoundedCornerShape(30),
         colors = ButtonDefaults.textButtonColors(
             backgroundColor = Color.White,
-            contentColor = Color.Black
+            contentColor = Color.Blacka
         )
     ) {
         Text(
