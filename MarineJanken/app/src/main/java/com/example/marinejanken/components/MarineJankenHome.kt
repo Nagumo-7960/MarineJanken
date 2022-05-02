@@ -29,7 +29,6 @@ class MarineJankenHome : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Navigation()
-            ShowHome()
         }
     }
 
@@ -40,15 +39,6 @@ class MarineJankenHome : ComponentActivity() {
         showBackground = true
     )
 
-    @Composable
-    fun Navigation(){
-        val navController = rememberNavController()
-        NavHost(navController = navController, startDestination = "showHome") {
-            composable("ShowHome") { ShowHome(/*...*/) }
-            composable("Battle_1") { Battle_1(/*...*/) }
-            /*...*/
-        }
-    }
 
     @Composable
     fun ShowHome() {
@@ -94,7 +84,7 @@ class MarineJankenHome : ComponentActivity() {
     fun StartButton() {
         val navController = rememberNavController()
         Button(
-            onClick = { navController.navigate("Battle_1") },
+            onClick = { navController.navigate("battle_1") },
             modifier = Modifier
                 .padding(
                     top = 300.dp
