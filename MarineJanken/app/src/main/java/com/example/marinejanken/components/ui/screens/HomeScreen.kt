@@ -23,7 +23,7 @@ import com.example.marinejanken.R
 @Composable
 fun HomeScreen(navController:NavController){
     Box (){
-        SetBackgroundImage()
+        HomeImageCard()
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -75,7 +75,7 @@ fun StartButton(navController: NavController) {
 
 
 @Composable
-fun SetBackgroundImage() {
+fun HomeImageCard() {
     Image(
         painter = painterResource(id = R.drawable.marine_home),
         contentDescription = "Background",
