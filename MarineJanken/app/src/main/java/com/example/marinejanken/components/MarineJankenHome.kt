@@ -18,12 +18,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
 
 class MarineJankenHome : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            Navigation()
             ShowHome()
         }
     }
@@ -34,6 +39,16 @@ class MarineJankenHome : ComponentActivity() {
     @Preview(
         showBackground = true
     )
+
+    @Composable
+    fun Navigation(){
+        val navController = rememberNavController()
+        NavHost(navController = navController, startDestination = "showHome") {
+            composable("ShowHome") { ShowHome(/*...*/) }
+            composable("Battle_1") { Battle_1(/*...*/) }
+            /*...*/
+        }
+    }
 
     @Composable
     fun ShowHome() {
@@ -77,8 +92,9 @@ class MarineJankenHome : ComponentActivity() {
 
     @Composable
     fun StartButton() {
+        val navController = rememberNavController()
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate("Battle_1") },
             modifier = Modifier
                 .padding(
                     top = 300.dp
@@ -96,6 +112,13 @@ class MarineJankenHome : ComponentActivity() {
                 fontWeight = FontWeight.Bold
             )
         }
+    }
+
+    @Composable
+    fun Battle_1(){
+        Text(
+            text = "画面遷移後"
+        )
     }
 
     @Preview
