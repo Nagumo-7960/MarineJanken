@@ -22,8 +22,9 @@ import com.example.marinejanken.R
 fun BattleScreen(navController: NavController) {
     Box {
         BattleImageCard_1()
-        Row {
+        Column() {
             BackHomeButton(navController = navController)
+            BeachGirlCard()
         }
     }
 
@@ -53,7 +54,7 @@ fun BackHomeButton(navController: NavController) {
         shape = RoundedCornerShape(30),
         colors = ButtonDefaults.textButtonColors(
             backgroundColor = Color.White,
-            contentColor = Color.Blacka
+            contentColor = Color.Black
         )
     ) {
         Text(
@@ -61,6 +62,18 @@ fun BackHomeButton(navController: NavController) {
             fontWeight = FontWeight.Bold
         )
     }
+}
+
+@Composable
+fun BeachGirlCard(){
+    Image(
+        painter = painterResource(id = R.drawable.girl_01),
+        contentDescription = "girl",
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier
+            .height(252.dp)
+            .width(94.dp)
+    )
 }
 
 @Preview
