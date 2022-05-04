@@ -7,6 +7,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -24,6 +25,12 @@ fun BattleScreen(navController: NavController) {
         BattleImageCard_1()
         Column() {
             BackHomeButton(navController = navController)
+        }
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            SpeechBalloonCard()
             BeachGirlCard()
         }
     }
@@ -73,6 +80,18 @@ fun BeachGirlCard(){
         modifier = Modifier
             .height(252.dp)
             .width(94.dp)
+    )
+}
+
+@Composable
+fun SpeechBalloonCard(){
+    Image(
+        painter = painterResource(id = R.drawable.speech_balloon),
+        contentDescription = "speech_balloon",
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier
+            .height(108.dp)
+            .width(287.dp)
     )
 }
 
