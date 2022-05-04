@@ -39,17 +39,29 @@ fun BattleScreen(navController: NavController) {
         }
         Column (
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxWidth(t血)
+            modifier = Modifier
+                .fillMaxWidth()
                 ){
             Row(
                 modifier = Modifier.padding(
-                    top = 600.dp
+                    top = 550.dp
                 ),
             ) {
                 JankenCard_Gu()
                 JankenCard_Choki()
                 JankenCard_Pa()
             }
+        }
+
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    top = 650.dp
+                )
+                ){
+            MySpeechBalloonCard()
         }
 
     }
@@ -148,6 +160,22 @@ fun JankenCard_Pa() {
             .height(117.dp)
             .width(109.dp)
 
+    )
+}
+
+@Composable
+fun MySpeechBalloonCard() {
+    Image(
+        painter = painterResource(id = R.drawable.myballoon),
+        contentDescription = "speech_balloon",
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier
+            .height(1
+                8.dp)
+            .width(287.dp)
+            .padding(
+                top = 50.dp
+            )
     )
 }
 
