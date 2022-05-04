@@ -1,15 +1,12 @@
-package com.example.marinejanken
+package com.example.marinejanken.components
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.MaterialTheme.colors
-import androidx.compose.material.MaterialTheme.shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,12 +18,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.marinejanken.R
 
-class MainActivity : ComponentActivity() {
+class MarineJankenHome : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ShowHome()
+            Navigation()
         }
     }
 
@@ -36,6 +38,7 @@ class MainActivity : ComponentActivity() {
     @Preview(
         showBackground = true
     )
+
 
     @Composable
     fun ShowHome() {
@@ -79,8 +82,9 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun StartButton() {
+        val navController = rememberNavController()
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate("battle_1") },
             modifier = Modifier
                 .padding(
                     top = 300.dp
@@ -98,6 +102,13 @@ class MainActivity : ComponentActivity() {
                 fontWeight = FontWeight.Bold
             )
         }
+    }
+
+    @Composable
+    fun Battle_1(){
+        Text(
+            text = "画面遷移後"
+        )
     }
 
     @Preview

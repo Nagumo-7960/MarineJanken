@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MarineJanken</string>
+    <string name="title_activity_marine_janken_battle1">MarineJankenBattle_1</string>
 </resources>
