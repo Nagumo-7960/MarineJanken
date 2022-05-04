@@ -1,6 +1,7 @@
 package com.example.marinejanken.components.ui.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -38,7 +39,7 @@ fun BattleScreen(navController: NavController) {
             BeachGirlCard()
 
             Row {
-                JankenCard_Gu()
+                JankenCard_Gu(navController)
                 JankenCard_Choki()
                 JankenCard_Pa()
             }
@@ -125,7 +126,7 @@ fun OptSpeechBalloonCard() {
 }
 
 @Composable
-fun JankenCard_Gu() {
+fun JankenCard_Gu(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_gu),
         contentDescription = "speech_balloon",
@@ -133,6 +134,14 @@ fun JankenCard_Gu() {
         modifier = Modifier
             .height(117.dp)
             .width(109.dp)
+            .clickable(
+                enabled = true,
+                onClickLabel = "Clickable image",
+                onClick = {
+                    navController.navigate("homeScreen")
+                }
+            )
+
     )
 }
 
