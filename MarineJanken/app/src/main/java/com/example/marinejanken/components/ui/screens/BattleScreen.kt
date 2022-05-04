@@ -37,6 +37,21 @@ fun BattleScreen(navController: NavController) {
             SpeechBalloonCard()
             BeachGirlCard()
         }
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth(t血)
+                ){
+            Row(
+                modifier = Modifier.padding(
+                    top = 600.dp
+                ),
+            ) {
+                JankenCard_Gu()
+                JankenCard_Choki()
+                JankenCard_Pa()
+            }
+        }
+
     }
 
 }
@@ -96,6 +111,43 @@ fun SpeechBalloonCard() {
         modifier = Modifier
             .height(108.dp)
             .width(287.dp)
+    )
+}
+
+@Composable
+fun JankenCard_Gu() {
+    Image(
+        painter = painterResource(id = R.drawable.gu),
+        contentDescription = "speech_balloon",
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier
+            .height(117.dp)
+            .width(109.dp)
+    )
+}
+
+@Composable
+fun JankenCard_Choki() {
+    Image(
+        painter = painterResource(id = R.drawable.choki),
+        contentDescription = "speech_balloon",
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier
+            .height(117.dp)
+            .width(109.dp)
+    )
+}
+
+@Composable
+fun JankenCard_Pa() {
+    Image(
+        painter = painterResource(id = R.drawable.pa),
+        contentDescription = "speech_balloon",
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier
+            .height(117.dp)
+            .width(109.dp)
+
     )
 }
 
