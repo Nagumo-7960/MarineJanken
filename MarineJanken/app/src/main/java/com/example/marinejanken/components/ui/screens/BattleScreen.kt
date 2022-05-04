@@ -31,7 +31,7 @@ fun BattleScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(
-                    top = 100.dp
+                    top = 70.dp
                 )
         ) {
             SpeechBalloonCard()
@@ -103,8 +103,13 @@ fun SpeechBalloonCard() {
         contentDescription = "speech_balloon",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
+            .fillMaxWidth()
             .height(108.dp)
             .width(287.dp)
+            .padding(
+                start = 50.dp,
+                end = 50.dp
+            )
     )
 }
 
@@ -152,10 +157,14 @@ fun MySpeechBalloonCard() {
         contentDescription = "speech_balloon",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
+            .fillMaxSize()
             .height(158.dp)
             .width(287.dp)
             .padding(
-                top = 50.dp
+                top = 50.dp,
+                start = 50.dp,
+                end = 50.dp,
+                bottom = 50.dp
             )
     )
 }
