@@ -37,7 +37,7 @@ fun BattleScreen(navController: NavController) {
             SpeechBalloonCard()
             BeachGirlCard()
 
-            Row() {
+            Row {
                 JankenCard_Gu()
                 JankenCard_Choki()
                 JankenCard_Pa()
@@ -98,19 +98,30 @@ fun BeachGirlCard() {
 
 @Composable
 fun SpeechBalloonCard() {
-    Image(
-        painter = painterResource(id = R.drawable.speech_balloon),
-        contentDescription = "speech_balloon",
-        contentScale = ContentScale.FillBounds,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(108.dp)
-            .width(287.dp)
-            .padding(
-                start = 50.dp,
-                end = 50.dp
-            )
-    )
+    Box (){
+        Image(
+            painter = painterResource(id = R.drawable.speech_balloon),
+            contentDescription = "speech_balloon",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(108.dp)
+                .width(287.dp)
+                .padding(
+                    start = 50.dp,
+                    end = 50.dp
+                )o
+        )
+        Text(
+            text = "水着のお姉さん「何を出そうかしら...」",
+            modifier = Modifier
+                .align(alignment = Alignment.Center)
+                .padding(
+                    bottom = 10.dp
+                )
+        )
+    }
+
 }
 
 @Composable
