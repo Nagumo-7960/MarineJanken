@@ -110,7 +110,7 @@ fun SpeechBalloonCard() {
                 .padding(
                     start = 50.dp,
                     end = 50.dp
-                )o
+                )
         )
         Text(
             text = "水着のお姉さん「何を出そうかしら...」",
@@ -163,21 +163,32 @@ fun JankenCard_Pa() {
 
 @Composable
 fun MySpeechBalloonCard() {
-    Image(
-        painter = painterResource(id = R.drawable.myballoon),
-        contentDescription = "speech_balloon",
-        contentScale = ContentScale.FillBounds,
-        modifier = Modifier
-            .fillMaxSize()
-            .height(158.dp)
-            .width(287.dp)
-            .padding(
-                top = 50.dp,
-                start = 50.dp,
-                end = 50.dp,
-                bottom = 50.dp
-            )
-    )
+    Box() {
+        Image(
+            painter = painterResource(id = R.drawable.myballoon),
+            contentDescription = "speech_balloon",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier
+                .fillMaxSize()
+                .height(158.dp)
+                .width(287.dp)
+                .padding(
+                    top = 50.dp,
+                    start = 50.dp,
+                    end = 50.dp,
+                    bottom = 50.dp
+                )
+        )
+        Text(
+            text = "どうしよう...",
+            modifier = Modifier
+                .align(alignment = Alignment.Center)
+                .padding(
+                    bottom = 10.dp
+                )
+        )
+    }
+
 }
 
 @Preview
