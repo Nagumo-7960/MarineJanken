@@ -39,7 +39,7 @@ fun BattleScreen(navController: NavController) {
             BeachGirlCard()
 
             Row {
-                JankenCard_Gu(navController)
+                JankenCard_Gu()
                 JankenCard_Choki()
                 JankenCard_Pa()
             }
@@ -126,7 +126,7 @@ fun OptSpeechBalloonCard() {
 }
 
 @Composable
-fun JankenCard_Gu(navController: NavController) {
+fun JankenCard_Gu() {
     Image(
         painter = painterResource(id = R.drawable.janken_gu),
         contentDescription = "speech_balloon",
@@ -136,9 +136,7 @@ fun JankenCard_Gu(navController: NavController) {
             .width(109.dp)
             .clickable(
                 enabled = true,
-                onClickLabel = "Clickable image",
                 onClick = {
-                    navController.navigate("homeScreen")
                 }
             )
 
@@ -154,6 +152,11 @@ fun JankenCard_Choki() {
         modifier = Modifier
             .height(117.dp)
             .width(109.dp)
+            .clickable(
+                enabled = true,
+                onClick = {
+                }
+            )
     )
 }
 
@@ -166,6 +169,11 @@ fun JankenCard_Pa() {
         modifier = Modifier
             .height(117.dp)
             .width(109.dp)
+            .clickable(
+                enabled = true,
+                onClick = {
+                }
+            )
 
     )
 }
