@@ -23,12 +23,16 @@ import com.example.marinejanken.R
 fun BattleScreen(navController: NavController) {
     Box {
         BattleImageCard_1()
-        Column() {
+        Column {
             BackHomeButton(navController = navController)
         }
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(
+                    top = 100.dp
+                )
         ) {
             SpeechBalloonCard()
             BeachGirlCard()
@@ -72,7 +76,7 @@ fun BackHomeButton(navController: NavController) {
 }
 
 @Composable
-fun BeachGirlCard(){
+fun BeachGirlCard() {
     Image(
         painter = painterResource(id = R.drawable.girl_01),
         contentDescription = "girl",
@@ -84,7 +88,7 @@ fun BeachGirlCard(){
 }
 
 @Composable
-fun SpeechBalloonCard(){
+fun SpeechBalloonCard() {
     Image(
         painter = painterResource(id = R.drawable.speech_balloon),
         contentDescription = "speech_balloon",
