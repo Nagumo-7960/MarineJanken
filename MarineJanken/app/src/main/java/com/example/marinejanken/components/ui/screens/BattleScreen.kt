@@ -36,31 +36,13 @@ fun BattleScreen(navController: NavController) {
         ) {
             SpeechBalloonCard()
             BeachGirlCard()
-        }
-        Column (
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxWidth()
-                ){
-            Row(
-                modifier = Modifier.padding(
-                    top = 550.dp
-                ),
-            ) {
+
+            Row() {
                 JankenCard_Gu()
                 JankenCard_Choki()
                 JankenCard_Pa()
             }
-        }
 
-        Column (
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(
-                    top = 650.dp
-                )
-                ){
             MySpeechBalloonCard()
         }
 
@@ -170,8 +152,7 @@ fun MySpeechBalloonCard() {
         contentDescription = "speech_balloon",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
-            .height(1
-                8.dp)
+            .height(158.dp)
             .width(287.dp)
             .padding(
                 top = 50.dp
