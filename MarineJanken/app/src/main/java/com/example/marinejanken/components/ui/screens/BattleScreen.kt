@@ -22,7 +22,7 @@ import com.example.marinejanken.R
 @Composable
 fun BattleScreen(navController: NavController) {
     Box {
-        BattleImageCard_1()
+        BattleBackgroundCard()
         Column {
             BackHomeButton(navController = navController)
         }
@@ -34,7 +34,7 @@ fun BattleScreen(navController: NavController) {
                     top = 70.dp
                 )
         ) {
-            SpeechBalloonCard()
+            OptSpeechBalloonCard()
             BeachGirlCard()
 
             Row {
@@ -51,9 +51,9 @@ fun BattleScreen(navController: NavController) {
 }
 
 @Composable
-fun BattleImageCard_1() {
+fun BattleBackgroundCard() {
     Image(
-        painter = painterResource(id = R.drawable.marine_battle_field),
+        painter = painterResource(id = R.drawable.battle_background),
         contentDescription = "Background",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier.fillMaxSize()
@@ -97,10 +97,10 @@ fun BeachGirlCard() {
 }
 
 @Composable
-fun SpeechBalloonCard() {
+fun OptSpeechBalloonCard() {
     Box (){
         Image(
-            painter = painterResource(id = R.drawable.speech_balloon),
+            painter = painterResource(id = R.drawable.opt_speech_balloon),
             contentDescription = "speech_balloon",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
@@ -127,7 +127,7 @@ fun SpeechBalloonCard() {
 @Composable
 fun JankenCard_Gu() {
     Image(
-        painter = painterResource(id = R.drawable.gu),
+        painter = painterResource(id = R.drawable.janken_gu),
         contentDescription = "speech_balloon",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
@@ -139,7 +139,7 @@ fun JankenCard_Gu() {
 @Composable
 fun JankenCard_Choki() {
     Image(
-        painter = painterResource(id = R.drawable.choki),
+        painter = painterResource(id = R.drawable.janken_choki),
         contentDescription = "speech_balloon",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
@@ -151,7 +151,7 @@ fun JankenCard_Choki() {
 @Composable
 fun JankenCard_Pa() {
     Image(
-        painter = painterResource(id = R.drawable.pa),
+        painter = painterResource(id = R.drawable.janken_pa),
         contentDescription = "speech_balloon",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
@@ -165,7 +165,7 @@ fun JankenCard_Pa() {
 fun MySpeechBalloonCard() {
     Box() {
         Image(
-            painter = painterResource(id = R.drawable.myballoon),
+            painter = painterResource(id = R.drawable.my_speech_balloon),
             contentDescription = "speech_balloon",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
