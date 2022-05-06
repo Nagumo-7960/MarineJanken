@@ -35,7 +35,7 @@ fun BattleScreen(navController: NavController) {
                     top = 70.dp
                 )
         ) {
-            OptSpeechBalloonCard()
+            OppSpeechBalloonCard()
             BeachGirlCard()
 
             Row {
@@ -98,7 +98,7 @@ fun BeachGirlCard() {
 }
 
 @Composable
-fun OptSpeechBalloonCard() {
+fun OppSpeechBalloonCard() {
     Box (){
         Image(
             painter = painterResource(id = R.drawable.opt_speech_balloon),

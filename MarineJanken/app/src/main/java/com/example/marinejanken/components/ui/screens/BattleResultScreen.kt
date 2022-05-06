@@ -26,7 +26,7 @@ fun BattleResultScreen(navController: NavController) {
     Box {
         BattleBackgroundCard()
         Column {
-            BackHomeButton(navController = navController)
+            BackToBattleButton(navController = navController)
         }
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -36,7 +36,7 @@ fun BattleResultScreen(navController: NavController) {
                     top = 70.dp
                 )
         ) {
-            OptSpeechBalloonCard()
+            OppSpeechBalloonCard()
             BeachGirlCard()
 
             Row {
@@ -45,7 +45,7 @@ fun BattleResultScreen(navController: NavController) {
 //                JankenCard_Pa()
             }
 
-            MySpeechBalloonCard()
+            MySpeechResultBalloonCard()
         }
 
     }
@@ -55,7 +55,7 @@ fun BattleResultScreen(navController: NavController) {
 @Composable
 fun BackToBattleButton(navController: NavController){
     Button(
-        onClick = { navController.navigate("homeScreen") },
+        onClick = { navController.navigate("battleScreen") },
         modifier = Modifier
             .padding(
                 top = 20.dp,
@@ -74,6 +74,36 @@ fun BackToBattleButton(navController: NavController){
             fontWeight = FontWeight.Bold
         )
     }
+}
+
+@Composable
+fun MySpeechResultBalloonCard(){
+    Box() {
+        Image(
+            painter = painterResource(id = R.drawable.my_speech_balloon),
+            contentDescription = "speech_balloon",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier
+                .fillMaxSize()
+                .height(158.dp)
+                .width(287.dp)
+                .padding(
+                    top = 50.dp,
+                    start = 50.dp,
+                    end = 50.dp,
+                    bottom = 50.dp
+                )
+        )
+        Text(
+            text = "どうしよう...",
+            modifier = Modifier
+                .align(alignment = Alignment.Center)
+                .padding(
+                    bottom = 10.dp
+                )
+        )
+    }
+
 }
 
 @Preview
