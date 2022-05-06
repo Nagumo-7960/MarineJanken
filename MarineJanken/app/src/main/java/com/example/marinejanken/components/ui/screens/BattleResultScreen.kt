@@ -37,14 +37,13 @@ fun BattleResultScreen(navController: NavController) {
                 )
         ) {
             OppSpeechBalloonCard()
-            BeachGirlCard()
-
-            Row {
-//                JankenCard_Gu()
-//                JankenCard_Choki()
-//                JankenCard_Pa()
+時
+            Box() {
+                BeachGirlCard()
+                OppHandCard()
             }
 
+            MyHandCard()
             MySpeechResultBalloonCard()
         }
 
@@ -104,6 +103,32 @@ fun MySpeechResultBalloonCard(){
         )
     }
 
+}
+@Composable
+fun OppHandCard(){
+    Image(
+        painter = painterResource(id = R.drawable.janken_gu),
+        contentDescription = "speech_balloon",
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier
+            .absoluteOffset(
+                y = 100.dp
+            )
+            .height(117.dp)
+            .width(109.dp)
+    )
+}
+
+@Composable
+fun MyHandCard(){
+    Image(
+        painter = painterResource(id = R.drawable.janken_gu),
+        contentDescription = "speech_balloon",
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier
+            .height(117.dp)
+            .width(109.dp)
+    )
 }
 
 @Preview
