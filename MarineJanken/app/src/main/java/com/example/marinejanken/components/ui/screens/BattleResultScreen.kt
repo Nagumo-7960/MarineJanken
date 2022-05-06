@@ -40,9 +40,9 @@ fun BattleResultScreen(navController: NavController) {
             BeachGirlCard()
 
             Row {
-                JankenCard_Gu()
-                JankenCard_Choki()
-                JankenCard_Pa()
+//                JankenCard_Gu()
+//                JankenCard_Choki()
+//                JankenCard_Pa()
             }
 
             MySpeechBalloonCard()
@@ -52,11 +52,35 @@ fun BattleResultScreen(navController: NavController) {
 
 }
 
+@Composable
+fun BackToBattleButton(navController: NavController){
+    Button(
+        onClick = { navController.navigate("homeScreen") },
+        modifier = Modifier
+            .padding(
+                top = 20.dp,
+                start = 10.dp
+            )
+            .height(35.dp)
+            .width(84.dp),
+        shape = RoundedCornerShape(30),
+        colors = ButtonDefaults.textButtonColors(
+            backgroundColor = Color.White,
+            contentColor = Color.Black
+        )
+    ) {
+        Text(
+            text = "戻る",
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+
 @Preview
 @Composable
 fun PreviewBattleRelustScreen() {
     val navController = rememberNavController()
 
-    BattleScreen(navController)
+    BattleResultScreen(navController)
 }
 
