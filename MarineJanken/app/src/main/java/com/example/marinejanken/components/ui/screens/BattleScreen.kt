@@ -137,7 +137,7 @@ fun JankenCard_Gu(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
-                    navController.navigate("battleResultScreen")
+                    navController.navigate("battleResultScreen/gu")
                 }
             )
 

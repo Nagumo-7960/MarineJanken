@@ -37,7 +37,7 @@ fun BattleResultScreen(navController: NavController) {
                 )
         ) {
             OppSpeechBalloonCard()
-時
+
             Box() {
                 BeachGirlCard()
                 OppHandCard()
