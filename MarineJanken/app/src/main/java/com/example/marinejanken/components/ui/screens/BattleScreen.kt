@@ -40,8 +40,8 @@ fun BattleScreen(navController: NavController) {
 
             Row {
                 JankenCard_Gu(navController)
-                JankenCard_Choki()
-                JankenCard_Pa()
+                JankenCard_Choki(navController)
+                JankenCard_Pa(navController)
             }
 
             MySpeechBalloonCard()
@@ -145,7 +145,7 @@ fun JankenCard_Gu(navController: NavController) {
 }
 
 @Composable
-fun JankenCard_Choki() {
+fun JankenCard_Choki(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_choki),
         contentDescription = "speech_balloon",
@@ -156,13 +156,14 @@ fun JankenCard_Choki() {
             .clickable(
                 enabled = true,
                 onClick = {
+                    navController.navigate("battleResultScreen/choki")
                 }
             )
     )
 }
 
 @Composable
-fun JankenCard_Pa() {
+fun JankenCard_Pa(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_pa),
         contentDescription = "speech_balloon",
@@ -173,6 +174,7 @@ fun JankenCard_Pa() {
             .clickable(
                 enabled = true,
                 onClick = {
+                    navController.navigate("battleResultScreen/pa")
                 }
             )
 
