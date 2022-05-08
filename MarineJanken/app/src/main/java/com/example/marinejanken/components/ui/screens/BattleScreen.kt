@@ -139,12 +139,12 @@ fun JankenCard_Gu(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
+                    handCheck="gu"
                     navController.navigate("battleResultScreen/gu")
                 }
             )
 
     )
-    handCheck="gu"
 }
 
 @Composable
@@ -159,11 +159,11 @@ fun JankenCard_Choki(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
+                    handCheck="choki"
                     navController.navigate("battleResultScreen/choki")
                 }
             )
     )
-    handCheck="choki"
 }
 
 @Composable
@@ -178,12 +178,12 @@ fun JankenCard_Pa(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
+                    handCheck="pa"
                     navController.navigate("battleResultScreen/pa")
                 }
             )
 
     )
-    handCheck="pa"
 }
 
 @Composable
