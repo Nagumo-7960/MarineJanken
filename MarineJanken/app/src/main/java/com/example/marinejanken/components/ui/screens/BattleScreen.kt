@@ -20,6 +20,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
 
+var handCheck = ""
+
 @Composable
 fun BattleScreen(navController: NavController) {
     Box {
@@ -142,6 +144,7 @@ fun JankenCard_Gu(navController: NavController) {
             )
 
     )
+    handCheck="gu"
 }
 
 @Composable
@@ -160,6 +163,7 @@ fun JankenCard_Choki(navController: NavController) {
                 }
             )
     )
+    handCheck="choki"
 }
 
 @Composable
@@ -179,6 +183,7 @@ fun JankenCard_Pa(navController: NavController) {
             )
 
     )
+    handCheck="pa"
 }
 
 @Composable

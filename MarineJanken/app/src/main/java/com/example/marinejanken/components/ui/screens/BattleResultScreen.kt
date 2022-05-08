@@ -20,6 +20,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
 import com.example.marinejanken.components.ui.screens.BattleScreen
+import com.example.marinejanken.components.MarineJankenHome
 
 @Composable
 fun BattleResultScreen(navController: NavController) {
@@ -121,19 +122,41 @@ fun OppHandCard(){
 
 @Composable
 fun MyHandCard(){
-    Image(
-        painter = painterResource(id = R.drawable.janken_gu),
-        contentDescription = "my_hand_card",
-        contentScale = ContentScale.FillBounds,
-        modifier = Modifier
-            .height(117.dp)
-            .width(109.dp)
-    )
+    if(handCheck=="gu") {
+        Image(
+            painter = painterResource(id = R.drawable.janken_gu),
+            contentDescription = "my_hand_card",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier
+                .height(117.dp)
+                .width(109.dp)
+        )
+    }
+    if (handCheck=="choki"){
+        Image(
+            painter = painterResource(id = R.drawable.janken_choki),
+            contentDescription = "my_hand_card",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier
+                .height(117.dp)
+                .width(109.dp)
+        )
+    }
+    if (handCheck=="pa"){
+        Image(
+            painter = painterResource(id = R.drawable.janken_pa),
+            contentDescription = "my_hand_card",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier
+                .height(117.dp)
+                .width(109.dp)
+        )
+    }
 }
 
 @Preview
 @Composable
-fun PreviewBattleRelustScreen() {
+fun PreviewBattleResultScreen() {
     val navController = rememberNavController()
 
     BattleResultScreen(navController)

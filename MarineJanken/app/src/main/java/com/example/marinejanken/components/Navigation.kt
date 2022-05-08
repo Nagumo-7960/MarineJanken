@@ -11,6 +11,7 @@ import com.example.marinejanken.components.ui.screens.HomeScreen
 import com.example.marinejanken.components.ui.screens.BattleResultScreen
 
 
+
 @Composable
 fun Navigation(){
     val navController = rememberNavController()
