@@ -129,7 +129,7 @@ fun OppSpeechBalloonCard() {
 fun JankenCard_Gu(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_gu),
-        contentDescription = "speech_balloon",
+        contentDescription = "jankencard_gu",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
             .height(117.dp)
@@ -148,7 +148,7 @@ fun JankenCard_Gu(navController: NavController) {
 fun JankenCard_Choki(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_choki),
-        contentDescription = "speech_balloon",
+        contentDescription = "jankencard_choki",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
             .height(117.dp)
@@ -166,7 +166,7 @@ fun JankenCard_Choki(navController: NavController) {
 fun JankenCard_Pa(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_pa),
-        contentDescription = "speech_balloon",
+        contentDescription = "jankencard_pa",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
             .height(117.dp)
@@ -186,7 +186,7 @@ fun MySpeechBalloonCard() {
     Box() {
         Image(
             painter = painterResource(id = R.drawable.my_speech_balloon),
-            contentDescription = "speech_balloon",
+            contentDescription = "my_speech_balloon",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
                 .fillMaxSize()

@@ -80,7 +80,7 @@ fun MySpeechResultBalloonCard(){
     Box() {
         Image(
             painter = painterResource(id = R.drawable.my_speech_balloon),
-            contentDescription = "speech_balloon",
+            contentDescription = "speech_result_balloon",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
                 .fillMaxSize()
@@ -108,7 +108,7 @@ fun MySpeechResultBalloonCard(){
 fun OppHandCard(){
     Image(
         painter = painterResource(id = R.drawable.janken_gu),
-        contentDescription = "speech_balloon",
+        contentDescription = "opp_hand_card",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
             .absoluteOffset(
@@ -123,7 +123,7 @@ fun OppHandCard(){
 fun MyHandCard(){
     Image(
         painter = painterResource(id = R.drawable.janken_gu),
-        contentDescription = "speech_balloon",
+        contentDescription = "my_hand_card",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
             .height(117.dp)
