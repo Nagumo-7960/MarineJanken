@@ -101,7 +101,7 @@ fun BeachGirlCard() {
 fun OppSpeechBalloonCard() {
     Box (){
         Image(
-            painter = painterResource(id = R.drawable.opt_speech_balloon),
+            painter = painterResource(id = R.drawable.opp_speech_balloon),
             contentDescription = "speech_balloon",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
