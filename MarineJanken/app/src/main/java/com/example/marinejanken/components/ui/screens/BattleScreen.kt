@@ -146,7 +146,8 @@ fun JankenCard_Gu(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
-                    myHandCheck="gu"
+                    myHandCheck = "gu"
+                    OppHandCheck()
                     navController.navigate("battleResultScreen/gu")
                 }
             )
@@ -166,7 +167,8 @@ fun JankenCard_Choki(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
-                    myHandCheck="choki"
+                    myHandCheck = "choki"
+                    OppHandCheck()
                     navController.navigate("battleResultScreen/choki")
                 }
             )
@@ -185,7 +187,8 @@ fun JankenCard_Pa(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
-                    myHandCheck="pa"
+                    myHandCheck = "pa"
+                    OppHandCheck()
                     navController.navigate("battleResultScreen/pa")
                 }
             )

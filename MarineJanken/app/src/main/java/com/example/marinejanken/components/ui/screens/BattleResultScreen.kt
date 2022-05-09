@@ -107,17 +107,45 @@ fun MySpeechResultBalloonCard(){
 }
 @Composable
 fun OppHandCard(){
-    Image(
-        painter = painterResource(id = R.drawable.janken_gu),
-        contentDescription = "opp_hand_card",
-        contentScale = ContentScale.FillBounds,
-        modifier = Modifier
-            .absoluteOffset(
-                y = 100.dp
+    when(oppHandCheck){
+        "gu" ->
+            Image(
+                painter = painterResource(id = R.drawable.janken_gu),
+                contentDescription = "opp_hand_card",
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier
+                    .absoluteOffset(
+                        y = 100.dp
+                    )
+                    .height(117.dp)
+                    .width(109.dp)
             )
-            .height(117.dp)
-            .width(109.dp)
-    )
+        "choki" ->
+            Image(
+                painter = painterResource(id = R.drawable.janken_choki),
+                contentDescription = "opp_hand_card",
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier
+                    .absoluteOffset(
+                        y = 100.dp
+                    )
+                    .height(117.dp)
+                    .width(109.dp)
+            )
+        "pa" ->
+            Image(
+                painter = painterResource(id = R.drawable.janken_pa),
+                contentDescription = "opp_hand_card",
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier
+                    .absoluteOffset(
+                        y = 100.dp
+                    )
+                    .height(117.dp)
+                    .width(109.dp)
+            )
+    }
+
 }
 
 @Composable
