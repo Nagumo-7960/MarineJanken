@@ -20,7 +20,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
 
-var handCheck = ""
+var myHandCheck = ""
+var oppHandCheck = ""
 
 @Composable
 fun BattleScreen(navController: NavController) {
@@ -139,7 +140,7 @@ fun JankenCard_Gu(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
-                    handCheck="gu"
+                    myHandCheck="gu"
                     navController.navigate("battleResultScreen/gu")
                 }
             )
@@ -159,7 +160,7 @@ fun JankenCard_Choki(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
-                    handCheck="choki"
+                    myHandCheck="choki"
                     navController.navigate("battleResultScreen/choki")
                 }
             )
@@ -178,7 +179,7 @@ fun JankenCard_Pa(navController: NavController) {
             .clickable(
                 enabled = true,
                 onClick = {
-                    handCheck="pa"
+                    myHandCheck="pa"
                     navController.navigate("battleResultScreen/pa")
                 }
             )

@@ -122,7 +122,7 @@ fun OppHandCard(){
 
 @Composable
 fun MyHandCard(){
-    if(handCheck=="gu") {
+    if(myHandCheck=="gu") {
         Image(
             painter = painterResource(id = R.drawable.janken_gu),
             contentDescription = "my_hand_card",
@@ -132,7 +132,7 @@ fun MyHandCard(){
                 .width(109.dp)
         )
     }
-    if (handCheck=="choki"){
+    if (myHandCheck=="choki"){
         Image(
             painter = painterResource(id = R.drawable.janken_choki),
             contentDescription = "my_hand_card",
@@ -142,7 +142,7 @@ fun MyHandCard(){
                 .width(109.dp)
         )
     }
-    if (handCheck=="pa"){
+    if (myHandCheck=="pa"){
         Image(
             painter = painterResource(id = R.drawable.janken_pa),
             contentDescription = "my_hand_card",
