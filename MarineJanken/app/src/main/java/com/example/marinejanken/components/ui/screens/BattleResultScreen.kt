@@ -22,6 +22,8 @@ import com.example.marinejanken.R
 import com.example.marinejanken.components.ui.screens.BattleScreen
 import com.example.marinejanken.components.MarineJankenHome
 
+var battleResult = ""
+
 @Composable
 fun BattleResultScreen(navController: NavController) {
     Box {
@@ -50,6 +52,45 @@ fun BattleResultScreen(navController: NavController) {
 
     }
 
+}
+
+fun BattleResultCheck(){
+    if(myHandCheck == "gu"){
+        if(oppHandCheck == "gu"){
+            battleResult = "draw"
+        }
+        if(oppHandCheck == "choki"){
+            battleResult = "win"
+        }
+        if(oppHandCheck == "pa"){
+            battleResult = "lose"
+        }
+    }
+
+    if(myHandCheck == "choki"){
+        if(oppHandCheck == "gu"){
+            battleResult = "lose"
+        }
+        if(oppHandCheck == "choki"){
+            battleResult = "draw"
+        }
+        if(oppHandCheck == "pa"){
+            battleResult = "win"
+        }
+
+    }
+
+    if(myHandCheck == "pa"){
+        if(oppHandCheck == "gu"){
+            battleResult = "win"
+        }
+        if(oppHandCheck == "choki"){
+            battleResult = "lose"
+        }
+        if(oppHandCheck == "pa"){
+            battleResult = "draw"
+        }
+    }
 }
 
 @Composable
