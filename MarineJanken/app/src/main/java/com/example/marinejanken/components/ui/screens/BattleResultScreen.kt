@@ -39,7 +39,7 @@ fun BattleResultScreen(navController: NavController) {
                     top = 70.dp
                 )
         ) {
-            OppSpeechBalloonCard()
+            OppSpeechResultBalloonCard()
 
             Box() {
                 BeachGirlCard()
@@ -115,6 +115,33 @@ fun BackToBattleButton(navController: NavController){
             fontWeight = FontWeight.Bold
         )
     }
+}
+@Composable
+fun OppSpeechResultBalloonCard() {
+    Box (){
+        Image(
+            painter = painterResource(id = R.drawable.opp_speech_balloon),
+            contentDescription = "speech_balloon",
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(108.dp)
+                .width(287.dp)
+                .padding(
+                    start = 50.dp,
+                    end = 50.dp
+                )
+        )
+        Text(
+            text = "水着のお姉さん「何を出そうかしら...」",
+            modifier = Modifier
+                .align(alignment = Alignment.Center)
+                .padding(
+                    bottom = 10.dp
+                )
+        )
+    }
+
 }
 
 @Composable
