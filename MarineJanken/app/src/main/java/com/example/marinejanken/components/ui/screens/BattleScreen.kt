@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
+import kotlin.random.Random
 
 var myHandCheck = ""
 var oppHandCheck = ""
@@ -52,6 +53,11 @@ fun BattleScreen(navController: NavController) {
 
     }
 
+}
+fun OppHandCheck(){
+    val oppHandList = listOf<String>("gu","choki","pa")
+    val randOppHandList = Random.nextInt(oppHandList.size)
+    oppHandCheck = oppHandList.get(randOppHandList)
 }
 
 @Composable
