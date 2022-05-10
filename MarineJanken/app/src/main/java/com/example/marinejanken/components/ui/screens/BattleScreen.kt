@@ -19,6 +19,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
+import kotlin.random.Random
+
+var myHandCheck = ""
+var oppHandCheck = ""
 
 @Composable
 fun BattleScreen(navController: NavController) {
@@ -35,13 +39,13 @@ fun BattleScreen(navController: NavController) {
                     top = 70.dp
                 )
         ) {
-            OptSpeechBalloonCard()
+            OppSpeechBalloonCard()
             BeachGirlCard()
 
             Row {
-                JankenCard_Gu()
-                JankenCard_Choki()
-                JankenCard_Pa()
+                JankenCard_Gu(navController)
+                JankenCard_Choki(navController)
+                JankenCard_Pa(navController)
             }
 
             MySpeechBalloonCard()
@@ -49,6 +53,12 @@ fun BattleScreen(navController: NavController) {
 
     }
 
+}
+
+fun OppHandCheck() {
+    val oppHandList = listOf<String>("gu", "choki", "pa")
+    val randOppHandList = Random.nextInt(oppHandList.size)
+    oppHandCheck = oppHandList.get(randOppHandList)
 }
 
 @Composable
@@ -98,10 +108,10 @@ fun BeachGirlCard() {
 }
 
 @Composable
-fun OptSpeechBalloonCard() {
-    Box (){
+fun OppSpeechBalloonCard() {
+    Box {
         Image(
-            painter = painterResource(id = R.drawable.opt_speech_balloon),
+            painter = painterResource(id = R.drawable.opp_speech_balloon),
             contentDescription = "speech_balloon",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
@@ -126,10 +136,10 @@ fun OptSpeechBalloonCard() {
 }
 
 @Composable
-fun JankenCard_Gu() {
+fun JankenCard_Gu(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_gu),
-        contentDescription = "speech_balloon",
+        contentDescription = "jankencard_gu",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
             .height(117.dp)
@@ -137,6 +147,10 @@ fun JankenCard_Gu() {
             .clickable(
                 enabled = true,
                 onClick = {
+                    myHandCheck = "gu"
+                    OppHandCheck()
+                    BattleResultCheck()
+                    navController.navigate("battleResultScreen/gu")
                 }
             )
 
@@ -144,10 +158,10 @@ fun JankenCard_Gu() {
 }
 
 @Composable
-fun JankenCard_Choki() {
+fun JankenCard_Choki(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_choki),
-        contentDescription = "speech_balloon",
+        contentDescription = "jankencard_choki",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
             .height(117.dp)
@@ -155,16 +169,20 @@ fun JankenCard_Choki() {
             .clickable(
                 enabled = true,
                 onClick = {
+                    myHandCheck = "choki"
+                    OppHandCheck()
+                    BattleResultCheck()
+                    navController.navigate("battleResultScreen/choki")
                 }
             )
     )
 }
 
 @Composable
-fun JankenCard_Pa() {
+fun JankenCard_Pa(navController: NavController) {
     Image(
         painter = painterResource(id = R.drawable.janken_pa),
-        contentDescription = "speech_balloon",
+        contentDescription = "jankencard_pa",
         contentScale = ContentScale.FillBounds,
         modifier = Modifier
             .height(117.dp)
@@ -172,6 +190,10 @@ fun JankenCard_Pa() {
             .clickable(
                 enabled = true,
                 onClick = {
+                    myHandCheck = "pa"
+                    OppHandCheck()
+                    BattleResultCheck()
+                    navController.navigate("battleResultScreen/pa")
                 }
             )
 
@@ -180,10 +202,10 @@ fun JankenCard_Pa() {
 
 @Composable
 fun MySpeechBalloonCard() {
-    Box() {
+    Box {
         Image(
             painter = painterResource(id = R.drawable.my_speech_balloon),
-            contentDescription = "speech_balloon",
+            contentDescription = "my_speech_balloon",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
                 .fillMaxSize()
