@@ -23,6 +23,16 @@ import com.example.marinejanken.components.ui.screens.BattleScreen
 import com.example.marinejanken.components.MarineJankenHome
 
 var battleResult = ""
+val oppResultPhrase = listOf<String>(
+    "私の勝ちね・・・",
+    "あいこね・・・",
+    "私の負けね・・・"
+)
+val myResultPhrase = listOf<String>(
+    "勝った！",
+    "もう1回！",
+    "負けちゃった・・・"
+)
 
 @Composable
 fun BattleResultScreen(navController: NavController) {
@@ -132,14 +142,36 @@ fun OppSpeechResultBalloonCard() {
                     end = 50.dp
                 )
         )
-        Text(
-            text = "水着のお姉さん「何を出そうかしら...」",
-            modifier = Modifier
-                .align(alignment = Alignment.Center)
-                .padding(
-                    bottom = 10.dp
+        when(battleResult){
+            "win" ->
+                Text(
+                    text = oppResultPhrase.get(3),
+                    modifier = Modifier
+                        .align(alignment = Alignment.Center)
+                        .padding(
+                            bottom = 10.dp
+                        )
                 )
-        )
+            "draw" ->
+                Text(
+                    text = oppResultPhrase.get(2),
+                    modifier = Modifier
+                        .align(alignment = Alignment.Center)
+                        .padding(
+                            bottom = 10.dp
+                        )
+                )
+            "lose" ->
+                Text(
+                    text = oppResultPhrase.get(1),
+                    modifier = Modifier
+                        .align(alignment = Alignment.Center)
+                        .padding(
+                            bottom = 10.dp
+                        )
+                )
+        }
+
     }
 
 }
@@ -162,14 +194,36 @@ fun MySpeechResultBalloonCard(){
                     bottom = 50.dp
                 )
         )
-        Text(
-            text = "どうしよう...",
-            modifier = Modifier
-                .align(alignment = Alignment.Center)
-                .padding(
-                    bottom = 10.dp
+        when(battleResult){
+            "win" ->
+                Text(
+                    text = "勝った！",
+                    modifier = Modifier
+                        .align(alignment = Alignment.Center)
+                        .padding(
+                            bottom = 10.dp
+                        )
                 )
-        )
+            "draw" ->
+                Text(
+                    text = "もう1回！",
+                    modifier = Modifier
+                        .align(alignment = Alignment.Center)
+                        .padding(
+                            bottom = 10.dp
+                        )
+                )
+            "lose" ->
+                Text(
+                    text = "負けちゃった・・・",
+                    modifier = Modifier
+                        .align(alignment = Alignment.Center)
+                        .padding(
+                            bottom = 10.dp
+                        )
+                )
+        }
+
     }
 
 }

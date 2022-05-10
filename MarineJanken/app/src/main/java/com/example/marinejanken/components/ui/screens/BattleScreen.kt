@@ -148,6 +148,7 @@ fun JankenCard_Gu(navController: NavController) {
                 onClick = {
                     myHandCheck = "gu"
                     OppHandCheck()
+                    BattleResultCheck()
                     navController.navigate("battleResultScreen/gu")
                 }
             )
@@ -169,6 +170,7 @@ fun JankenCard_Choki(navController: NavController) {
                 onClick = {
                     myHandCheck = "choki"
                     OppHandCheck()
+                    BattleResultCheck()
                     navController.navigate("battleResultScreen/choki")
                 }
             )
@@ -189,6 +191,7 @@ fun JankenCard_Pa(navController: NavController) {
                 onClick = {
                     myHandCheck = "pa"
                     OppHandCheck()
+                    BattleResultCheck()
                     navController.navigate("battleResultScreen/pa")
                 }
             )
