@@ -1,7 +1,6 @@
 package com.example.marinejanken.components.ui.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -19,8 +18,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
-import com.example.marinejanken.components.ui.screens.BattleScreen
-import com.example.marinejanken.components.MarineJankenHome
 
 var battleResult = ""
 val oppResultPhrase = listOf<String>(
@@ -51,7 +48,7 @@ fun BattleResultScreen(navController: NavController) {
         ) {
             OppSpeechResultBalloonCard()
 
-            Box() {
+            Box {
                 BeachGirlCard()
                 OppHandCard()
             }
@@ -64,47 +61,47 @@ fun BattleResultScreen(navController: NavController) {
 
 }
 
-fun BattleResultCheck(){
-    if(myHandCheck == "gu"){
-        if(oppHandCheck == "gu"){
+fun BattleResultCheck() {
+    if (myHandCheck == "gu") {
+        if (oppHandCheck == "gu") {
             battleResult = "draw"
         }
-        if(oppHandCheck == "choki"){
+        if (oppHandCheck == "choki") {
             battleResult = "win"
         }
-        if(oppHandCheck == "pa"){
+        if (oppHandCheck == "pa") {
             battleResult = "lose"
         }
     }
 
-    if(myHandCheck == "choki"){
-        if(oppHandCheck == "gu"){
+    if (myHandCheck == "choki") {
+        if (oppHandCheck == "gu") {
             battleResult = "lose"
         }
-        if(oppHandCheck == "choki"){
+        if (oppHandCheck == "choki") {
             battleResult = "draw"
         }
-        if(oppHandCheck == "pa"){
+        if (oppHandCheck == "pa") {
             battleResult = "win"
         }
 
     }
 
-    if(myHandCheck == "pa"){
-        if(oppHandCheck == "gu"){
+    if (myHandCheck == "pa") {
+        if (oppHandCheck == "gu") {
             battleResult = "win"
         }
-        if(oppHandCheck == "choki"){
+        if (oppHandCheck == "choki") {
             battleResult = "lose"
         }
-        if(oppHandCheck == "pa"){
+        if (oppHandCheck == "pa") {
             battleResult = "draw"
         }
     }
 }
 
 @Composable
-fun BackToBattleButton(navController: NavController){
+fun BackToBattleButton(navController: NavController) {
     Button(
         onClick = { navController.navigate("battleScreen") },
         modifier = Modifier
@@ -126,9 +123,10 @@ fun BackToBattleButton(navController: NavController){
         )
     }
 }
+
 @Composable
 fun OppSpeechResultBalloonCard() {
-    Box (){
+    Box {
         Image(
             painter = painterResource(id = R.drawable.opp_speech_balloon),
             contentDescription = "speech_balloon",
@@ -142,7 +140,7 @@ fun OppSpeechResultBalloonCard() {
                     end = 50.dp
                 )
         )
-        when(battleResult){
+        when (battleResult) {
             "win" ->
                 Text(
                     text = oppResultPhrase.get(2),
@@ -177,8 +175,8 @@ fun OppSpeechResultBalloonCard() {
 }
 
 @Composable
-fun MySpeechResultBalloonCard(){
-    Box() {
+fun MySpeechResultBalloonCard() {
+    Box {
         Image(
             painter = painterResource(id = R.drawable.my_speech_balloon),
             contentDescription = "speech_result_balloon",
@@ -194,7 +192,7 @@ fun MySpeechResultBalloonCard(){
                     bottom = 50.dp
                 )
         )
-        when(battleResult){
+        when (battleResult) {
             "win" ->
                 Text(
                     text = myResultPhrase.get(0),
@@ -227,9 +225,10 @@ fun MySpeechResultBalloonCard(){
     }
 
 }
+
 @Composable
-fun OppHandCard(){
-    when(oppHandCheck){
+fun OppHandCard() {
+    when (oppHandCheck) {
         "gu" ->
             Image(
                 painter = painterResource(id = R.drawable.janken_gu),
@@ -271,35 +270,35 @@ fun OppHandCard(){
 }
 
 @Composable
-fun MyHandCard(){
-    when(myHandCheck) {
+fun MyHandCard() {
+    when (myHandCheck) {
         "gu" ->
-        Image(
-            painter = painterResource(id = R.drawable.janken_gu),
-            contentDescription = "my_hand_card",
-            contentScale = ContentScale.FillBounds,
-            modifier = Modifier
-                .height(117.dp)
-                .width(109.dp)
-        )
-    "choki" ->
-        Image(
-            painter = painterResource(id = R.drawable.janken_choki),
-            contentDescription = "my_hand_card",
-            contentScale = ContentScale.FillBounds,
-            modifier = Modifier
-                .height(117.dp)
-                .width(109.dp)
-        )
+            Image(
+                painter = painterResource(id = R.drawable.janken_gu),
+                contentDescription = "my_hand_card",
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier
+                    .height(117.dp)
+                    .width(109.dp)
+            )
+        "choki" ->
+            Image(
+                painter = painterResource(id = R.drawable.janken_choki),
+                contentDescription = "my_hand_card",
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier
+                    .height(117.dp)
+                    .width(109.dp)
+            )
         "pa" ->
-        Image(
-            painter = painterResource(id = R.drawable.janken_pa),
-            contentDescription = "my_hand_card",
-            contentScale = ContentScale.FillBounds,
-            modifier = Modifier
-                .height(117.dp)
-                .width(109.dp)
-        )
+            Image(
+                painter = painterResource(id = R.drawable.janken_pa),
+                contentDescription = "my_hand_card",
+                contentScale = ContentScale.FillBounds,
+                modifier = Modifier
+                    .height(117.dp)
+                    .width(109.dp)
+            )
     }
 }
 

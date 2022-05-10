@@ -54,8 +54,9 @@ fun BattleScreen(navController: NavController) {
     }
 
 }
-fun OppHandCheck(){
-    val oppHandList = listOf<String>("gu","choki","pa")
+
+fun OppHandCheck() {
+    val oppHandList = listOf<String>("gu", "choki", "pa")
     val randOppHandList = Random.nextInt(oppHandList.size)
     oppHandCheck = oppHandList.get(randOppHandList)
 }
@@ -108,7 +109,7 @@ fun BeachGirlCard() {
 
 @Composable
 fun OppSpeechBalloonCard() {
-    Box (){
+    Box {
         Image(
             painter = painterResource(id = R.drawable.opp_speech_balloon),
             contentDescription = "speech_balloon",
@@ -201,7 +202,7 @@ fun JankenCard_Pa(navController: NavController) {
 
 @Composable
 fun MySpeechBalloonCard() {
-    Box() {
+    Box {
         Image(
             painter = painterResource(id = R.drawable.my_speech_balloon),
             contentDescription = "my_speech_balloon",
