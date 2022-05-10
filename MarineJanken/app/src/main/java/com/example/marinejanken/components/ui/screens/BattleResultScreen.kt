@@ -145,7 +145,7 @@ fun OppSpeechResultBalloonCard() {
         when(battleResult){
             "win" ->
                 Text(
-                    text = oppResultPhrase.get(3),
+                    text = oppResultPhrase.get(2),
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -154,7 +154,7 @@ fun OppSpeechResultBalloonCard() {
                 )
             "draw" ->
                 Text(
-                    text = oppResultPhrase.get(2),
+                    text = oppResultPhrase.get(1),
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -163,7 +163,7 @@ fun OppSpeechResultBalloonCard() {
                 )
             "lose" ->
                 Text(
-                    text = oppResultPhrase.get(1),
+                    text = oppResultPhrase.get(0),
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -197,7 +197,7 @@ fun MySpeechResultBalloonCard(){
         when(battleResult){
             "win" ->
                 Text(
-                    text = "勝った！",
+                    text = myResultPhrase.get(0),
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -206,7 +206,7 @@ fun MySpeechResultBalloonCard(){
                 )
             "draw" ->
                 Text(
-                    text = "もう1回！",
+                    text = myResultPhrase.get(1),
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -215,7 +215,7 @@ fun MySpeechResultBalloonCard(){
                 )
             "lose" ->
                 Text(
-                    text = "負けちゃった・・・",
+                    text = myResultPhrase.get(2),
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
