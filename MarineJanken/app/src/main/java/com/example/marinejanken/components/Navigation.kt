@@ -23,7 +23,9 @@ fun Navigation(){
             arguments = listOf(
                 navArgument("handId"){type = NavType.StringType}
             )
-        ){ BattleResultScreen(navController)}
+        ){ backStackEntry ->
+            BattleResultScreen(navController, backStackEntry.arguments?.getString("handId"))
+        }
         /*...*/
     }
 }

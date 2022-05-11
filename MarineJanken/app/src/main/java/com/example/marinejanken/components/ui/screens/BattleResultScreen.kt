@@ -32,7 +32,7 @@ val myResultPhrase = listOf<String>(
 )
 
 @Composable
-fun BattleResultScreen(navController: NavController) {
+fun BattleResultScreen(navController: NavController, myHand: String?) {
     Box {
         BattleBackgroundCard()
         Column {
@@ -103,7 +103,7 @@ fun BattleResultCheck() {
 @Composable
 fun BackToBattleButton(navController: NavController) {
     Button(
-        onClick = { navController.navigate("battleScreen") },
+        onClick = { navController.popBackStack() },
         modifier = Modifier
             .padding(
                 top = 20.dp,
@@ -308,6 +308,6 @@ fun MyHandCard() {
 fun PreviewBattleResultScreen() {
     val navController = rememberNavController()
 
-    BattleResultScreen(navController)
+    BattleResultScreen(navController,"gu")
 }
 
