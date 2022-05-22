@@ -5,7 +5,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,12 +28,26 @@ import com.example.marinejanken.R
 fun HomeScreen(navController: NavController) {
     Box {
         HomeImageCard()
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            ShowTitle()
-            StartButton(navController = navController)
+        Column(modifier = Modifier.fillMaxSize()) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        top = 10.dp,
+                        start = 10.dp
+                    )
+            ) {
+                SettingButton()
+            }
+
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                ShowTitle()
+                StartButton(navController = navController)
+            }
         }
+
     }
 }
 
@@ -72,6 +89,20 @@ fun StartButton(navController: NavController) {
             fontWeight = FontWeight.Bold
         )
     }
+}
+
+@Composable
+fun SettingButton(){
+    Icon(
+        imageVector = Icons.Filled.Settings,
+        contentDescription = "settings",
+        modifier = Modifier
+            .size(
+                width = 50.dp,
+                height = 50.dp
+            )
+    )
+
 }
 
 
