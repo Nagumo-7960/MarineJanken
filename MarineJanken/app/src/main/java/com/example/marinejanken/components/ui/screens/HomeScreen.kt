@@ -25,7 +25,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(toBattle :() -> Unit) {
     Box {
         HomeImageCard()
         Column(modifier = Modifier.fillMaxSize()) {
@@ -44,7 +44,7 @@ fun HomeScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 ShowTitle()
-                StartButton(navController = navController)
+                StartButton{ toBattle() }
             }
         }
 
@@ -69,9 +69,9 @@ fun ShowTitle() {
 }
 
 @Composable
-fun StartButton(navController: NavController) {
+fun StartButton(toBattle: () -> Unit) {
     Button(
-        onClick = { navController.navigate("battleScreen") },
+        onClick = { toBattle() },
         modifier = Modifier
             .padding(
                 top = 300.dp
@@ -120,6 +120,6 @@ fun HomeImageCard() {
 @Composable
 fun PreviewHome() {
     val navController = rememberNavController()
-    HomeScreen(navController)
+//    HomeScreen(navController)
 }
 
