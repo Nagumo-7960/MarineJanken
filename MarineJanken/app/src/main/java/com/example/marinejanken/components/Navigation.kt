@@ -16,7 +16,11 @@ import com.example.marinejanken.components.ui.screens.BattleResultScreen
 fun Navigation(){
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "homeScreen") {
-        composable("homeScreen") { HomeScreen(navController) }
+        composable("homeScreen") {
+            HomeScreen{
+                navController.navigate("battleScreen")
+            }
+        }
         composable("battleScreen") { BattleScreen(navController) }
         composable(
             "battleResultScreen/{handId}",
