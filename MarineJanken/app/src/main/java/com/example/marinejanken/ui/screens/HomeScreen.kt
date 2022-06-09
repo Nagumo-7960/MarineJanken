@@ -120,6 +120,6 @@ fun HomeImageCard() {
 @Composable
 fun PreviewHome() {
     val navController = rememberNavController()
-//    HomeScreen(navController)
+    HomeScreen{}
 }
 
