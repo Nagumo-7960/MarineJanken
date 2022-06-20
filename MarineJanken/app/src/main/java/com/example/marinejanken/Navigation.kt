@@ -9,7 +9,7 @@ import androidx.navigation.navArgument
 import com.example.marinejanken.components.ui.screens.BattleScreen
 import com.example.marinejanken.components.ui.screens.HomeScreen
 import com.example.marinejanken.components.ui.screens.BattleResultScreen
-
+import com.example.marinejanken.ui.screens.SettingScreen
 
 
 @Composable
@@ -17,10 +17,16 @@ fun Navigation(){
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "homeScreen") {
         composable("homeScreen") {
-            HomeScreen{
-                navController.navigate("battleScreen")
-            }
+                HomeScreen(
+                    toBattle = {navController.navigate("battleScreen")},
+                    toSetting = {navController.navigate("settingScreen")}
+                )
+
         }
+        composable("settingScreen"){
+            SettingScreen()
+        }
+
         composable("battleScreen") { BattleScreen(navController) }
         composable(
             "battleResultScreen/{handId}",

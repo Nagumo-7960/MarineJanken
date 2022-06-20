@@ -40,6 +40,9 @@
         <entry key="../../../../../../layout/compose-model-1654065252225.xml" value="0.21326013513513514" />
         <entry key="../../../../../../layout/compose-model-1654421822205.xml" value="0.11851851851851852" />
         <entry key="../../../../../../layout/compose-model-1654421834683.xml" value="0.11851851851851852" />
+        <entry key="app/src/main/java/com/example/marinejanken/ui/screens/BattleResultScreen.kt" value="0.19071729957805908" />
+        <entry key="app/src/main/java/com/example/marinejanken/ui/screens/BattleScreen.kt" value="0.19071729957805908" />
+        <entry key="app/src/main/java/com/example/marinejanken/ui/screens/HomeScreen.kt" value="0.25" />
       </map>
     </option>
   </component>
