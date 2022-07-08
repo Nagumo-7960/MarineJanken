@@ -1,6 +1,7 @@
 package com.example.marinejanken.components.ui.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -25,7 +26,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
 
 @Composable
-fun HomeScreen(toBattle :() -> Unit) {
+fun HomeScreen(toBattle:() ->Unit , toSetting :()-> Unit) {
     Box {
         HomeImageCard()
         Column(modifier = Modifier.fillMaxSize()) {
@@ -37,7 +38,7 @@ fun HomeScreen(toBattle :() -> Unit) {
                         start = 10.dp
                     )
             ) {
-                SettingButton()
+                SettingButton{toSetting()}
             }
 
             Column(
@@ -92,7 +93,7 @@ fun StartButton(toBattle: () -> Unit) {
 }
 
 @Composable
-fun SettingButton(){
+fun SettingButton(toSetting: () -> Unit){
     Icon(
         imageVector = Icons.Filled.Settings,
         contentDescription = "settings",
@@ -100,6 +101,12 @@ fun SettingButton(){
             .size(
                 width = 50.dp,
                 height = 50.dp
+            )
+            .clickable(
+                enabled = true,
+                onClick = {
+                    toSetting()
+                }
             )
     )
 
@@ -120,6 +127,6 @@ fun HomeImageCard() {
 @Composable
 fun PreviewHome() {
     val navController = rememberNavController()
-    HomeScreen{}
+//    HomeScreen{}
 }
 
