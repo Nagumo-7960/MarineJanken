@@ -1,18 +1,16 @@
 package com.example.marinejanken.ui.screens
 
+import org.junit.Test
 import org.junit.jupiter.api.Assertions.*
 
 internal class BattleResultScreenKtTest {
 
-    @org.junit.jupiter.api.Test
-    fun getBattleResult() {
+    @Test
+    fun sampleTest(){
+        assertEquals(1,1)
     }
-
-    @org.junit.jupiter.api.Test
-    fun getOppResultPhrase() {
-    }
-
-    @org.junit.jupiter.api.Test
-    fun getMyResultPhrase() {
+    @Test
+    fun sampleTest2(){
+        assertEquals(2,1)
     }
 }
