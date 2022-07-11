@@ -1,9 +1,6 @@
 package com.example.marinejanken.ui.screens
 
-import com.example.marinejanken.components.ui.screens.BattleResultCheck
-import com.example.marinejanken.components.ui.screens.battleResult
-import com.example.marinejanken.components.ui.screens.myHandCheck
-import com.example.marinejanken.components.ui.screens.oppHandCheck
+import com.example.marinejanken.components.ui.screens.*
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.*
 
@@ -12,16 +9,24 @@ internal class BattleResultScreenKtTest {
     fun JankenResultTest(){
         myHandCheck = "gu"
         oppHandCheck = "choki"
-        BattleResultCheck()
+        battleResultCheck()
         assertEquals("win", battleResult)
     }
 
     @Test
-    fun sampleTest(){
-        assertEquals(1,1)
+    fun PhraseResultTest(){
+        battleResult = "win"
+        battleResultCheck()
+        assertEquals(oppResultPhrase, oppResultPhraseList.get(2))
+        assertEquals(myResultPhrase, myResultPhraseList.get(0))
+        battleResult = "draw"
+        battleResultCheck()
+        assertEquals(oppResultPhrase, oppResultPhraseList.get(1))
+        assertEquals(myResultPhrase, myResultPhraseList.get(1))
+        battleResult = "lose"
+        battleResultCheck()
+        assertEquals(oppResultPhrase, oppResultPhraseList.get(0))
+        assertEquals(myResultPhrase, myResultPhraseList.get(2))
     }
-    @Test
-    fun sampleTest2(){
-        assertEquals(2,1)
-    }
+
 }

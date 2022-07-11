@@ -20,16 +20,18 @@ import androidx.navigation.compose.rememberNavController
 import com.example.marinejanken.R
 
 var battleResult = ""
-val oppResultPhrase = listOf<String>(
+val oppResultPhraseList = listOf<String>(
     "私の勝ちね・・・",
     "あいこね・・・",
     "私の負けね・・・"
 )
-val myResultPhrase = listOf<String>(
+val myResultPhraseList = listOf<String>(
     "勝った！",
     "もう1回！",
     "負けちゃった・・・"
 )
+var oppResultPhrase = ""
+var myResultPhrase = ""
 
 @Composable
 fun BattleResultScreen(navController: NavController, myHand: String?) {
@@ -61,7 +63,7 @@ fun BattleResultScreen(navController: NavController, myHand: String?) {
 
 }
 
-fun BattleResultCheck() {
+fun battleResultCheck() {
     if (myHandCheck == "gu") {
         if (oppHandCheck == "gu") {
             battleResult = "draw"
@@ -96,6 +98,21 @@ fun BattleResultCheck() {
         }
         if (oppHandCheck == "pa") {
             battleResult = "draw"
+        }
+    }
+
+    when(battleResult){
+        "win" -> {
+            oppResultPhrase = oppResultPhraseList.get(2)
+            myResultPhrase = myResultPhraseList.get(0)
+        }
+        "draw" -> {
+            oppResultPhrase = oppResultPhraseList.get(1)
+            myResultPhrase = myResultPhraseList.get(1)
+        }
+        "lose" -> {
+            oppResultPhrase = oppResultPhraseList.get(0)
+            myResultPhrase = myResultPhraseList.get(2)
         }
     }
 }
@@ -143,7 +160,7 @@ fun OppSpeechResultBalloonCard() {
         when (battleResult) {
             "win" ->
                 Text(
-                    text = oppResultPhrase.get(2),
+                    text = oppResultPhrase,
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -152,7 +169,7 @@ fun OppSpeechResultBalloonCard() {
                 )
             "draw" ->
                 Text(
-                    text = oppResultPhrase.get(1),
+                    text = oppResultPhrase,
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -161,7 +178,7 @@ fun OppSpeechResultBalloonCard() {
                 )
             "lose" ->
                 Text(
-                    text = oppResultPhrase.get(0),
+                    text = oppResultPhrase,
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -195,7 +212,7 @@ fun MySpeechResultBalloonCard() {
         when (battleResult) {
             "win" ->
                 Text(
-                    text = myResultPhrase.get(0),
+                    text = myResultPhrase,
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -204,7 +221,7 @@ fun MySpeechResultBalloonCard() {
                 )
             "draw" ->
                 Text(
-                    text = myResultPhrase.get(1),
+                    text = myResultPhrase,
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
@@ -213,7 +230,7 @@ fun MySpeechResultBalloonCard() {
                 )
             "lose" ->
                 Text(
-                    text = myResultPhrase.get(2),
+                    text = myResultPhrase,
                     modifier = Modifier
                         .align(alignment = Alignment.Center)
                         .padding(
