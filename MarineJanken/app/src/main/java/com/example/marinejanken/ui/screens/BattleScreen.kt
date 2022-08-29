@@ -25,11 +25,11 @@ var myHandCheck = ""
 var oppHandCheck = ""
 
 @Composable
-fun BattleScreen(navController: NavController) {
+fun BattleScreen(toResult:() -> Unit,toHome:() -> Unit) {
     Box {
         BattleBackgroundCard()
         Column {
-            BackHomeButton(navController = navController)
+            BackHomeButton(toHome)
         }
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -43,9 +43,9 @@ fun BattleScreen(navController: NavController) {
             BeachGirlCard()
 
             Row {
-                JankenCard_Gu(navController)
-                JankenCard_Choki(navController)
-                JankenCard_Pa(navController)
+                JankenCard_Gu(toResult)
+                JankenCard_Choki(toResult)
+                JankenCard_Pa(toResult)
             }
 
             MySpeechBalloonCard()
@@ -72,9 +72,9 @@ fun BattleBackgroundCard() {
 }
 
 @Composable
-fun BackHomeButton(navController: NavController) {
+fun BackHomeButton(toHome: () -> Unit) {
     Button(
-        onClick = { navController.navigate("homeScreen") },
+        onClick = { toHome() },
         modifier = Modifier
             .padding(
                 top = 20.dp,
@@ -136,7 +136,7 @@ fun OppSpeechBalloonCard() {
 }
 
 @Composable
-fun JankenCard_Gu(navController: NavController) {
+fun JankenCard_Gu(toResult: () -> Unit) {
     Image(
         painter = painterResource(id = R.drawable.janken_gu),
         contentDescription = "jankencard_gu",
@@ -150,7 +150,7 @@ fun JankenCard_Gu(navController: NavController) {
                     myHandCheck = "gu"
                     OppHandCheck()
                     battleResultCheck()
-                    navController.navigate("battleResultScreen/gu")
+                    toResult()
                 }
             )
 
@@ -158,7 +158,7 @@ fun JankenCard_Gu(navController: NavController) {
 }
 
 @Composable
-fun JankenCard_Choki(navController: NavController) {
+fun JankenCard_Choki(toResult: () -> Unit) {
     Image(
         painter = painterResource(id = R.drawable.janken_choki),
         contentDescription = "jankencard_choki",
@@ -172,14 +172,14 @@ fun JankenCard_Choki(navController: NavController) {
                     myHandCheck = "choki"
                     OppHandCheck()
                     battleResultCheck()
-                    navController.navigate("battleResultScreen/choki")
+                    toResult()
                 }
             )
     )
 }
 
 @Composable
-fun JankenCard_Pa(navController: NavController) {
+fun JankenCard_Pa(toResult: () -> Unit) {
     Image(
         painter = painterResource(id = R.drawable.janken_pa),
         contentDescription = "jankencard_pa",
@@ -193,7 +193,7 @@ fun JankenCard_Pa(navController: NavController) {
                     myHandCheck = "pa"
                     OppHandCheck()
                     battleResultCheck()
-                    navController.navigate("battleResultScreen/pa")
+                    toResult()
                 }
             )
 
@@ -230,11 +230,11 @@ fun MySpeechBalloonCard() {
 
 }
 
-@Preview
-@Composable
-fun PreviewBattleScreen() {
-    val navController = rememberNavController()
-
-    BattleScreen(navController)
-}
+//@Preview
+//@Composable
+//fun PreviewBattleScreen() {
+//    val navController = rememberNavController()
+//
+//    BattleScreen(navController)
+//}
 

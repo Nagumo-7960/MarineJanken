@@ -27,7 +27,12 @@ fun Navigation(){
             SettingScreen()
         }
 
-        composable("battleScreen") { BattleScreen(navController) }
+        composable("battleScreen") {
+            BattleScreen(
+                toHome = {navController.navigate("home")},
+                toResult = {navController.navigate("battleResultScreen/{handId}")}
+            )
+        }
         composable(
             "battleResultScreen/{handId}",
             arguments = listOf(
