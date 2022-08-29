@@ -30,7 +30,7 @@ fun Navigation(){
         composable("battleScreen") {
             BattleScreen(
                 toHome = {navController.navigate("home")},
-                toResult = {navController.navigate("battleResultScreen/{handId}")}
+                toResult = { handId -> navController.navigate("battleResultScreen/${handId}")}
             )
         }
         composable(

@@ -25,7 +25,7 @@ var myHandCheck = ""
 var oppHandCheck = ""
 
 @Composable
-fun BattleScreen(toResult:() -> Unit,toHome:() -> Unit) {
+fun BattleScreen(toResult: (String?) -> Unit, toHome:() -> Unit) {
     Box {
         BattleBackgroundCard()
         Column {
@@ -136,7 +136,7 @@ fun OppSpeechBalloonCard() {
 }
 
 @Composable
-fun JankenCard_Gu(toResult: () -> Unit) {
+fun JankenCard_Gu(toResult: (String) -> Unit) {
     Image(
         painter = painterResource(id = R.drawable.janken_gu),
         contentDescription = "jankencard_gu",
@@ -150,7 +150,7 @@ fun JankenCard_Gu(toResult: () -> Unit) {
                     myHandCheck = "gu"
                     OppHandCheck()
                     battleResultCheck()
-                    toResult()
+                    toResult(myHandCheck)
                 }
             )
 
@@ -158,7 +158,7 @@ fun JankenCard_Gu(toResult: () -> Unit) {
 }
 
 @Composable
-fun JankenCard_Choki(toResult: () -> Unit) {
+fun JankenCard_Choki(toResult: (String) -> Unit) {
     Image(
         painter = painterResource(id = R.drawable.janken_choki),
         contentDescription = "jankencard_choki",
@@ -172,14 +172,14 @@ fun JankenCard_Choki(toResult: () -> Unit) {
                     myHandCheck = "choki"
                     OppHandCheck()
                     battleResultCheck()
-                    toResult()
+                    toResult(myHandCheck)
                 }
             )
     )
 }
 
 @Composable
-fun JankenCard_Pa(toResult: () -> Unit) {
+fun JankenCard_Pa(toResult: (String) -> Unit) {
     Image(
         painter = painterResource(id = R.drawable.janken_pa),
         contentDescription = "jankencard_pa",
@@ -193,7 +193,7 @@ fun JankenCard_Pa(toResult: () -> Unit) {
                     myHandCheck = "pa"
                     OppHandCheck()
                     battleResultCheck()
-                    toResult()
+                    toResult(myHandCheck)
                 }
             )
 
